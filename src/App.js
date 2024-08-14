@@ -1,12 +1,12 @@
 import './App.css';
-import Card from './Card';
+
+import Form from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      <h1>Carga de estudiantes</h1>
-      <form></form>
-      <Card />
+      <h1>¿Cuál es tu libro favorito?</h1>
+      <Form />
     </div>
   );
 }
