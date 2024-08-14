@@ -11,7 +11,6 @@ const Form = () => {
 
   const [flag, setFlag] = useState(false);
   const [error, setError] = useState(false)
-  const [info, setInfo] = useState("")
 
   const handleName = (e) => {
     setUser({ ...user, name: e.target.value });
@@ -28,14 +27,12 @@ const Form = () => {
     if (user.name.trim().length < 3 || user.name.trim() !== user.name) {
         
         setError(true);
-        setInfo("El nombre debe tener al menos 3 caracteres y no debe contener espacios en blanco al principio o al final");
         return;
     }
     
     if (user.book.trim().length < 6) {
 
         setError(true);
-        setInfo("El libro debe tener al menos 6 caracteres");
         return;
     }
 
@@ -56,7 +53,7 @@ const Form = () => {
             </label>
             <button type="submit">Enviar</button>
         </form>   
-        {error ? <p style={{ color: 'red' }}>{info}</p> : null}
+        {error ? <p style={{ color: 'red' }}>Por favor chequea que la información sea correcta</p> : null}
         {flag ? <Card prop={user} /> : null}
     </div>
   );
